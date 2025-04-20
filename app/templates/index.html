@@ -6,7 +6,51 @@
     <title>ChatBot Flask</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-  <body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
-    <h1 class="text-2xl font-bold mb-4 text-center">Implementacion de ChatBot con Flask</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+
+    <div class="w-full max-w-2xl bg-white shadow-lg rounded-2xl p-6">
+
+        <h1 class="text-2xl font-bold mb-4 text-center">Implementacion de ChatBot con Flask</h1>
+
+        <div id="pseudo-login">
+            
+            <label for="username" class="block text-sm font-medium text-gray-700">Ingrese su username</label>
+            <input type="text" id="username" class="mt-1 p-2 border border-gray-300 rounded w-full">
+            <button id="login-button" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
+                Ingresar.
+            </button>
+        
+        </div>
+
+        <div id="seccion-chat" class="hidden grid grid-cols-3 gap-4">
+
+            <div class="col-span-1 border-r pr-4">
+
+                <h2 class="text-lg font-semibold mb-4"> Mis conversaciones</h2>
+                <ul id="historial-chats" class="space-y-2 text-sm"></ul>
+                <button id="nueva-conversacion" class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
+                    Nueva conversación.
+                </button>
+
+            </div>
+
+            <div class="col-span-2 flex flex-col h-[32rem]">
+
+                <div id="chat-box" class="flex-1 overflow-y-auto border p-4 rounded bg-gray-50 space-y-2 mb-4"></div>
+                <form id="add-message" class="flex gap-2">
+                    <input type="text" id="message" placeholder="Escriba su mensaje..." class="flex-1 p-2 border border-gray-300 rounded" required>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        Enviar Mensaje.
+                    </button>
+                </form>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 </html>
