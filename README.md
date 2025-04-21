@@ -31,6 +31,12 @@ Aquí, el usuario debe ingresar su username para ingresar al chat. En caso de no
 Ya dentro del apartado de chat, en caso de existir alguna conversación (o más de una conversación, lo cual se valida mediante el endpoint /history/user_id) previa asociada al usuario, se mostrará por defecto la última conversación disponible, pudiendo además navegar entre las conversaciones que existan (en donde los mensajes respectivos se extraen del endpoint /conversation/conversation_id). <br>
 En caso de existir menos de 10 conversaciones, el usuario podrá crear una nueva conversación presionando el botón "nueva conversación", en donde simplemente debe escribir un mensaje y esperar la respuesta del asistente IA, creando así una nueva conversación (todo lo anterior validandose mediante el endpoint /chat). Para explicar de forma más detallada el flujo de los datos dentro de un chat, se adjunta el siguiente diagrama de flujo (además, se recomienda revisar los comentarios a lo largo del código):
 
-![Ejemplo](https://i.gyazo.com/d2aecc05f82c457bdba280039bd315a3.png)
+![Ejemplo](https://i.gyazo.com/a44b822e6b96c53b7fa62880576e9041.png)
 
+## Funciones a agregar próximamente
+Adicionalmente, se agregan a continuación algunas funcionalidades que se espera implementar próximamente, se encuentran ordenadas de mayor a menor prioridad:
 
+1. Referencias asociadas a los chats en la sección de historial (Fecha de creación / Último mensaje).
+2. Chats con memoria (envío del historial completo al bot, para que recuerde todo lo interactuado previamente).
+3. Botón de eliminar conversación (Ideal para evitar tener que crear una nueva cuenta para acceder a 10 chats nuevamente).
+4. Mejoras de diseño (para tener un estilo más elegante dentro de la aplicación).
