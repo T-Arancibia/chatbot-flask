@@ -36,7 +36,7 @@ En caso de existir menos de 10 conversaciones, el usuario podrá crear una nueva
 ## Funciones a agregar próximamente
 Adicionalmente, se agregan a continuación algunas funcionalidades que se espera implementar próximamente, se encuentran ordenadas de mayor a menor prioridad:
 
-1. Referencias asociadas a los chats en la sección de historial (Fecha de creación / Último mensaje).
-2. Chats con memoria (envío del historial completo al bot, para que recuerde todo lo interactuado previamente).
-3. Botón de eliminar conversación (Ideal para evitar tener que crear una nueva cuenta para acceder a 10 chats nuevamente).
-4. Mejoras de diseño (para tener un estilo más elegante dentro de la aplicación).
+1. Referencias asociadas a los chats en la sección de historial (Fecha de creación / Último mensaje) (implementado).
+2. Chats con memoria (envío del historial completo al bot, para que recuerde todo lo interactuado previamente) (implementado).
+3. Mejoras de diseño (para tener un estilo más elegante dentro de la aplicación).
+4. Botón de eliminar conversación (Ideal para evitar tener que crear una nueva cuenta para acceder a 10 chats nuevamente).
