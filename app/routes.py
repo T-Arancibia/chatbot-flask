@@ -58,7 +58,7 @@ def chat():
         conversation_id = create_conversation(user_id)
     #Se realiza la insercion en la DB, tanto del mensaje enviado, como la respuesta recibida por el chatbot
     save_message(conversation_id, "user", message)
-    response = get_bot_response(message)
+    response = get_bot_response(message, conversation_id)
     save_message(conversation_id, "assistant", response)
     return jsonify({"response": response, "conversation_id": conversation_id, "user_id": user_id})
 
