@@ -54,7 +54,10 @@ async function refreshHistory(autoLoadLatest = false) {
   conversations.forEach((conversation, index) => {
     const item = document.createElement("li");
     item.className = "cursor-pointer text-blue-600 hover:underline";
-    item.innerText = `Conversación ${conversation.id}`;
+    item.innerHTML = `<strong>Conversación ${conversation.id}</strong><br>
+            <span>Creada: ${new Date(conversation.start_time).toLocaleString()}</span><br>
+            <span>Último mensaje: ${conversation.last_message_timestamp ? new Date(conversation.last_message_timestamp).toLocaleString() : "Sin mensajes (por ahora....)"}</span>
+        `;
     //Si uno hace click en una conversacion del historial, se muestra en el chatbox dicho historial de la conversacion seleccionada
     item.addEventListener("click", () => {
       conversationId = conversation.id;

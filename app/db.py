@@ -90,10 +90,12 @@ def save_message(conversation_id, role, content):
 def get_conversations_by_user(user_id):
     connection = get_db()
     c = connection.cursor()
-    c.execute("SELECT id, start_time FROM Conversaciones WHERE user_id = ? ORDER BY start_time DESC", (user_id,))
+    c.execute('''SELECT conv.id, conv.start_time, MAX(mess.timestamp) as last_message_timestamp FROM Conversaciones conv
+    LEFT JOIN Mensajes mess ON conv.id = mess.conversation_id WHERE user_id = ?
+    GROUP BY conv.id ORDER BY conv.start_time DESC''', (user_id,))
     rows = c.fetchall()
     connection.close()
-    return [{"id": row[0], "start_time": row[1]} for row in rows]
+    return [{"id": row[0], "start_time": row[1], "last_message_timestamp" : row[2]} for row in rows]
 #Logica similar a la query anterior, solo que se usa el id de la conversacion para extraer sus mensajes asociados
 def get_messages_by_conversation(conversation_id):
     connection = get_db()
